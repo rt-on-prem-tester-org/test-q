@@ -1,0 +1,13 @@
+version: v1.0
+name: SemaphoreCI Test
+agent:
+  machine:
+    type: s1-op-tester
+blocks:
+  - name: Test App
+    task:
+      jobs:
+        - name: Build & Test App
+          commands:
+            - echo "Hello 12"
+            
