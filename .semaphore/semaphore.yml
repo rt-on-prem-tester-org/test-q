@@ -11,3 +11,7 @@ blocks:
           commands:
             - echo "Hello 123456"
             
+promotions:
+  - name: Stage env
+    pipeline_file: stage.yml
+    deployment_target: TestDT
