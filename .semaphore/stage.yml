@@ -1,0 +1,12 @@
+version: v1.0
+name: SemaphoreCI Stage
+agent:
+  machine:
+    type: s1-op-tester
+blocks:
+  - name: Stage
+    task:
+      jobs:
+        - name: Deploy Stage
+          commands:
+            - echo "Deploying..."
