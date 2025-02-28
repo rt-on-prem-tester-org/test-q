@@ -2,12 +2,14 @@ version: v1.0
 name: SemaphoreCI Test
 agent:
   machine:
-    type: s1-op-tester
+    type: f1-standard-2
+    os_image: ubuntu2204
 blocks:
   - name: Test App
     task:
       jobs:
         - name: Build & Test App
           commands:
-            - echo "Hello 123456"
-            
+            - echo "AKEY=$KEY"
+            - 'PAYLOAD=$(echo $SEMAPHORE_OIDC_TOKEN | cut -d "." -f 2 | base64 -d 2>/dev/null) || true'
+            - echo "OIDC Payload=$PAYLOAD"
